@@ -129,7 +129,7 @@ Visualisasi :
 
 - He et al., “Deep Residual Learning for Image Recognition,” 2015/2016.
 - PyTorch & TorchVision dokumentasi.
-- CelebA Dataset (Face Attributes).
+- CelebA Dataset (Face Attributes) [LINK]( https://www.kaggle.com/datasets/jessicali9530/celeba-dataset/data)
 
 ---
 
