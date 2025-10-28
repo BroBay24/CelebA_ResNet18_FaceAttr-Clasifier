@@ -107,12 +107,17 @@ Penjelasan singkat:
 - Loss training tidak muncul di gambar, jadi digunakan estimasi mendekati nilai val/test loss (0.17–0.18).
 
 Visualisasi :
-- Confusion Matrix: <img width="526" height="637" alt="image" src="https://github.com/user-attachments/assets/79e87ede-d9db-497a-b726-39f6689cc54f" />
-- ROC Curve / PR Curve: <img width="1263" height="419" alt="image" src="https://github.com/user-attachments/assets/e331399b-4a3e-4744-b7fe-c9fee152d36f" />
+- Confusion Matrix:
+  
+  <img width="526" height="637" alt="image" src="https://github.com/user-attachments/assets/79e87ede-d9db-497a-b726-39f6689cc54f" />
+- ROC Curve / PR Curve:
+  
+  <img width="1263" height="419" alt="image" src="https://github.com/user-attachments/assets/e331399b-4a3e-4744-b7fe-c9fee152d36f" />
 
 - Contoh Prediksi:
   - Image A → Pred: Smiling (p=0.97)
   - Image B → Pred: Not Smiling (p=0.12)
+  - 
   <img width="1827" height="391" alt="image" src="https://github.com/user-attachments/assets/184d9ff0-7fa0-4a18-b8e8-86f9cd257623" />
 
 
