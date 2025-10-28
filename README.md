@@ -24,25 +24,10 @@ Projek ini melatih model ResNet-18 pretrained untuk klasifikasi atribut wajah â€
 
 ---
 
-## Persiapan environment
-
-1) Pastikan Python 3.8+ terpasang.
-
-2) Instal dependensi minimal (sesuaikan dengan versi CUDA/CPU kamu):
-```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121  # ganti cu121 sesuai CUDA; atau hapus --index-url untuk CPU
-pip install numpy pandas scikit-learn matplotlib seaborn tqdm jupyter
-```
-
-3) Jalankan Jupyter:
-```bash
-jupyter notebook
-```
-Lalu buka dan eksekusi sel-sel di `CelebA_ResNet18_SmileClassification_clean.ipynb` secara berurutan.
-
 Catatan:
 - load dataset bisa dari Gdrive saya sudah menyertakannya pada notebook, tinggal ganti path nya saja
 - Pastikan internet aman dan tidak memakai data seluler karena kemakan banyak source
+- run cell berurutan jangan run all sekaligus
 
 ---
 
