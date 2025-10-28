@@ -91,8 +91,6 @@ Silakan sesuaikan path dataset di notebook sesuai lokasi.
 
 ## Hasil (Output)
 
-Di bawah ini adalah template hasil yang bisa Anda isi setelah menjalankan notebook. Gantilah angka-angka dengan metrik yang Anda dapatkan di eksperimen Anda.
-
 - Akurasi (Test & Validation) : `92.33% (Test)` | `92.56% (Validation)`
 - Precision (Smiling=Positif): `92.00%`
 - Recall (Smiling=Positif): `93.00%`
@@ -120,50 +118,6 @@ Visualisasi :
   - 
   <img width="1827" height="391" alt="image" src="https://github.com/user-attachments/assets/184d9ff0-7fa0-4a18-b8e8-86f9cd257623" />
 
-
-Tips pelaporan:
-- Laporkan juga setting eksperimen: optimizer, LR, batch size, epochs, random seed, dan split data.
-- Bila melakukan k-fold atau beberapa run, sertakan mean ± std.
-
----
-
-## Inferensi Cepat (Contoh Kode)
-
-Contoh sederhana untuk memuat model tersimpan dan melakukan prediksi pada satu gambar. Sesuaikan nama file checkpoint dan path sesuai output notebook Anda.
-
-```python
-import torch
-from torchvision import models, transforms
-from PIL import Image
-
-# 1) Definisikan transform yang sama seperti saat training
-transform = transforms.Compose([
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                         std=[0.229, 0.224, 0.225]),
-])
-
-# 2) Bangun model dengan arsitektur yang sama
-model = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
-model.fc = torch.nn.Linear(model.fc.in_features, 1)  # biner: 1 logit
-model.load_state_dict(torch.load("checkpoints/best_model.pt", map_location="cpu"))
-model.eval()
-
-# 3) Prediksi pada satu gambar
-img_path = "path/to/example.jpg"
-img = Image.open(img_path).convert("RGB")
-x = transform(img).unsqueeze(0)  # [1,3,224,224]
-
-with torch.no_grad():
-    logit = model(x)
-    prob = torch.sigmoid(logit).item()
-
-print(f"Prob(Smiling) = {prob:.4f}")
-print("Prediksi:", "Smiling" if prob >= 0.5 else "Not Smiling")
-```
-
----
 
 ## Reproduksibilitas
 
