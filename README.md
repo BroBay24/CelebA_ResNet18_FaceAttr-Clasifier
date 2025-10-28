@@ -16,12 +16,11 @@ Projek ini melatih model ResNet-18 pretrained untuk klasifikasi atribut wajah â€
 
 - `CelebA_ResNet18_SmileClassification_clean.ipynb` â€” Notebook utama yang berisi:
   - Setup lingkungan dan dependensi
-  - Download/penyiapan dataset (atau petunjuk penggunaan data lokal)
+  - Download/penyiapan dataset
   - Preprocessing (resize/normalisasi ala ImageNet)
   - Definisi model ResNet-18 dan head klasifikasi biner
   - Training loop + validasi
-  - Evaluasi (metric, confusion matrix, ROC/PR curve jika disertakan)
-  - Contoh inferensi pada gambar baru
+  - Evaluasi (metric, confusion matrix, ROC/PR curve)
 
 ---
 
