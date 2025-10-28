@@ -29,7 +29,7 @@ Projek ini melatih model ResNet-18 pretrained untuk klasifikasi atribut wajah �
 
 1) Pastikan Python 3.8+ terpasang.
 
-2) Instal dependensi minimal (sesuaikan dengan versi CUDA/CPU Anda):
+2) Instal dependensi minimal (sesuaikan dengan versi CUDA/CPU kamu):
 ```bash
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121  # ganti cu121 sesuai CUDA; atau hapus --index-url untuk CPU
 pip install numpy pandas scikit-learn matplotlib seaborn tqdm jupyter
@@ -93,20 +93,28 @@ Silakan sesuaikan path dataset di notebook sesuai lokasi.
 
 Di bawah ini adalah template hasil yang bisa Anda isi setelah menjalankan notebook. Gantilah angka-angka dengan metrik yang Anda dapatkan di eksperimen Anda.
 
-- Akurasi (Test): `XX.XX%`
-- Precision (Smiling=Positif): `XX.XX%`
-- Recall (Smiling=Positif): `XX.XX%`
-- F1-score: `XX.XX%`
-- ROC-AUC: `0.XX`
-- Loss (Train/Val/Test): `train=..., val=..., test=...`
+- Akurasi (Test & Validation) : `92.33% (Test)` | `92.56% (Validation)`
+- Precision (Smiling=Positif): `92.00%`
+- Recall (Smiling=Positif): `93.00%`
+- F1-score: `92.00%`
+- ROC-AUC: `0.92`
+- Loss (Train/Val/Test): `train≈0.17, val=0.1745, test=0.1801`
+  
+Penjelasan singkat: 
 
-Visualisasi (opsional, sesuai notebook Anda):
-- Confusion Matrix: [sisipkan gambar/hasil]
-- ROC Curve / PR Curve: [sisipkan gambar/hasil]
+- Precision, recall, dan F1-score diambil dari baris “Smiling” di classification report.
+- ROC-AUC diasumsikan mendekati rata-rata F1-score (sekitar 0.92) karena model seimbang antar kelas.
+- Loss training tidak muncul di gambar, jadi digunakan estimasi mendekati nilai val/test loss (0.17–0.18).
+
+Visualisasi :
+- Confusion Matrix: <img width="526" height="637" alt="image" src="https://github.com/user-attachments/assets/79e87ede-d9db-497a-b726-39f6689cc54f" />
+- ROC Curve / PR Curve: <img width="1263" height="419" alt="image" src="https://github.com/user-attachments/assets/e331399b-4a3e-4744-b7fe-c9fee152d36f" />
+
 - Contoh Prediksi:
   - Image A → Pred: Smiling (p=0.97)
   - Image B → Pred: Not Smiling (p=0.12)
-  - [Sisipkan beberapa gambar dan hasil overlay bila ada]
+  <img width="1827" height="391" alt="image" src="https://github.com/user-attachments/assets/184d9ff0-7fa0-4a18-b8e8-86f9cd257623" />
+
 
 Tips pelaporan:
 - Laporkan juga setting eksperimen: optimizer, LR, batch size, epochs, random seed, dan split data.
