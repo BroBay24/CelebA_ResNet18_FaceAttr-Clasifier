@@ -43,8 +43,8 @@ Catatan:
     list_attr_celeba.txt       # anotasi atribut
   ```
 
-Preprocessing yang lazim:
-- Resize ke 224x224
+Preprocessing:
+- Resize ke 64x64
 - Normalisasi mean/std ImageNet:
   - mean = [0.485, 0.456, 0.406]
   - std  = [0.229, 0.224, 0.225]
@@ -57,9 +57,9 @@ Silakan sesuaikan path dataset di notebook sesuai lokasi.
 
 - Backbone: ResNet-18 pretrained (ImageNet)
 - Head: Linear layer untuk klasifikasi biner
-- Loss: BCEWithLogitsLoss atau CrossEntropyLoss (tergantung implementasi di notebook)
-- Optimizer: Adam/SGD (default Adam LR ~1e-3, dapat disesuaikan)
-- Scheduler: Opsional (StepLR/ReduceLROnPlateau)
+- Loss: BCEWithLogitsLoss
+- Optimizer: Adam/SGD (Adam LR ~1e-4, dapat disesuaikan)
+- Scheduler: StepLR/ReduceLROnPlateau (opsional)
 - Augmentasi: Resize, center/RandomCrop, RandomHorizontalFlip (opsional), Normalization
 
 ---
